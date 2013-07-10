@@ -6,7 +6,7 @@ app.get('/', function(request, response) {
     try {
 	var data = new Buffer(fs.readFileSync('index.html'));
     } catch (err) {
-	if (err.code != 'ENOENT') throw e;
+	if (err.code != 'ENOENT') throw err;
 	console.log("File not found ");
     }
     response.send(buf.toString(data));
