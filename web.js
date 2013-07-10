@@ -9,7 +9,7 @@ app.get('/', function(request, response) {
 	if (err.code != 'ENOENT') throw err;
 	console.log("File not found ");
     }
-    response.send(buf.toString(data));
+    response.send(data.toString("utf8"));
 });
 
 var port = process.env.PORT || 5000;
